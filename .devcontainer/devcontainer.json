@@ -1,0 +1,10 @@
+{
+  "name": "Sample Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {}
+  },
+  "overrideCommand": false,
+  "postCreateCommand": "nix develop --command bash -c 'make all'",
+  "remoteUser": "vscode"
+}
