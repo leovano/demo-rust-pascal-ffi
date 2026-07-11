@@ -1,30 +1,15 @@
-# Paths
-RUST_DIR = .
-PASCAL_DIR = pascal
-TARGET_DIR = $(RUST_DIR)/target/release
-BUILD_DIR = $(PASCAL_DIR)/build
+.PHONY: all 01 run valgrind clean
 
-# Binary name
-APP_NAME = main
+all: 01
 
-.PHONY: all clean run valgrind
-
-all: rust fpc
-
-rust:
-	cargo build --release
-
-fpc: rust
-	@mkdir -p $(BUILD_DIR)
-	fpc -Mobjfpc -Sh -Fl$(TARGET_DIR) -FU$(BUILD_DIR) -FE$(BUILD_DIR) $(PASCAL_DIR)/$(APP_NAME).pas
+01:
+	$(MAKE) -C 01_string_concat all
 
 run:
-	LD_LIBRARY_PATH=$(TARGET_DIR) ./$(BUILD_DIR)/$(APP_NAME)
+	$(MAKE) -C 01_string_concat run
 
 valgrind:
-	LD_LIBRARY_PATH=$(TARGET_DIR) valgrind --leak-check=full --show-leak-kinds=all ./$(BUILD_DIR)/$(APP_NAME)
+	$(MAKE) -C 01_string_concat valgrind
 
 clean:
-	cargo clean
-	rm -rf $(BUILD_DIR)
-	rm -f $(APP_NAME)
+	$(MAKE) -C 01_string_concat clean

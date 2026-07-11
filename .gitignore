@@ -1,3 +1,4 @@
 /.direnv
-/target
-/pascal/build
+target/
+**/build/
+**/target/
