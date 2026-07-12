@@ -24,6 +24,7 @@
         pkgs = import nixpkgs { inherit system overlays; };
         runtimeLibs = with pkgs; [
           stdenv.cc.cc.lib
+          openssl
         ];
         rustToolchain = pkgs.rust-bin.stable.latest.default.override {
           extensions = [

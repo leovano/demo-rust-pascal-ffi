@@ -1,0 +1,19 @@
+{
+   rust_thread_atexit_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:__cxa_thread_atexit_impl
+   ...
+   fun:process_invoices
+}
+{
+   rust_thread_new_possible
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc
+   fun:_ZN3std6thread6thread6Thread3new*
+   fun:_ZN3std6thread7current12init_current*
+   ...
+   fun:process_invoices
+}

@@ -1,3 +1,11 @@
 [workspace]
-members = ["01_string_concat/rust"]
+members = [
+    "01_string_concat/rust",
+    "02_invoice_sealer/rust",
+]
+
 resolver = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1

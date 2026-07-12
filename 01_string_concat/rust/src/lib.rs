@@ -1,3 +1,12 @@
+/// Concatenates two string buffers into an output destination.
+///
+/// # Safety
+///
+/// This function is unsafe because it dereferences raw pointer arguments. The caller must ensure that:
+/// - `a_ptr` points to a valid, initialized block of at least `a_len` bytes.
+/// - `b_ptr` points to a valid, initialized block of at least `b_len` bytes.
+/// - `out_ptr` points to a writable block of memory of size at least `a_len + b_len` bytes.
+/// - The memory ranges do not overlap.
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn rust_concat(
     a_ptr: *const u8,
