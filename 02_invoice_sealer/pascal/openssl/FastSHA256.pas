@@ -7,7 +7,7 @@ interface
 
 type
   TSHA256Context = record
-    Data: array[0..255] of Byte; 
+    Data: array[0..255] of Byte;
   end;
   TSHA256Digest = array[0..31] of Byte;
 

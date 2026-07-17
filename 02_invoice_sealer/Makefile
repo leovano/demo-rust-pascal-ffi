@@ -14,7 +14,7 @@ rust:
 
 fpc: rust
 	@mkdir -p $(BUILD_DIR)
-	fpc -Mobjfpc -Sh -Fl$(TARGET_DIR) -FU$(BUILD_DIR) -FE$(BUILD_DIR) $(PASCAL_DIR)/$(APP_NAME).pas
+	fpc -Mobjfpc -Sh -Fl$(TARGET_DIR) -FU$(BUILD_DIR) -FE$(BUILD_DIR) -Fu$(PASCAL_DIR)/common -Fu$(PASCAL_DIR)/pure -Fu$(PASCAL_DIR)/openssl -Fu$(PASCAL_DIR)/rust_ffi $(PASCAL_DIR)/$(APP_NAME).pas
 
 run:
 	LD_LIBRARY_PATH=$(TARGET_DIR):$$LD_LIBRARY_PATH ./$(BUILD_DIR)/$(APP_NAME)

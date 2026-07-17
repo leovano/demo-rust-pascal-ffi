@@ -4,7 +4,7 @@ unit OpenSSLInvoiceSealer;
 
 interface
 
-uses LibInvoiceSealer;
+uses InvoiceTypes;
 
 procedure ProcessInvoicesOpenSSL(var Invoices: array of TInvoice);
 

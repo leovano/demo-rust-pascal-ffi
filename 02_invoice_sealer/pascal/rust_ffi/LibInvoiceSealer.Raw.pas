@@ -5,7 +5,7 @@ unit LibInvoiceSealer.Raw;
 
 interface
 
-uses LibInvoiceSealer;
+uses InvoiceTypes;
 
 function process_invoices(Invoices: PInvoice; Len: SizeInt): LongInt; cdecl; external 'invoice_sealer';
 function process_invoices_single(Invoices: PInvoice; Len: SizeInt): LongInt; cdecl; external 'invoice_sealer';

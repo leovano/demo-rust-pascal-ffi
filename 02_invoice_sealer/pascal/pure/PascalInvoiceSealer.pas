@@ -4,7 +4,7 @@ unit PascalInvoiceSealer;
 
 interface
 
-uses LibInvoiceSealer;
+uses InvoiceTypes;
 
 procedure ProcessInvoicesPascal(var Invoices: array of TInvoice);
 

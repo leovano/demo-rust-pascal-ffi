@@ -4,17 +4,7 @@ unit LibInvoiceSealer;
 
 interface
 
-type
-  TInvoice = record
-    Id: QWord;
-    CustomerId: LongWord;
-    NetAmount: Double;
-    TaxRate: Double;
-    GrossAmount: Double;
-    TaxAmount: Double;
-    ValidationHash: array[0..31] of Byte;
-  end;
-  PInvoice = ^TInvoice;
+uses InvoiceTypes;
 
 procedure ProcessInvoices(var Invoices: array of TInvoice);
 procedure ProcessInvoicesSingle(var Invoices: array of TInvoice);

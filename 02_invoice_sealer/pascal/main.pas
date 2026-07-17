@@ -1,6 +1,6 @@
 program InvoiceSealerDemo;
 
-uses SysUtils, LibInvoiceSealer, PascalInvoiceSealer, OpenSSLInvoiceSealer;
+uses SysUtils, InvoiceTypes, LibInvoiceSealer, PascalInvoiceSealer, OpenSSLInvoiceSealer;
 
 const
   DEFAULT_INVOICE_COUNT = 10000000;
